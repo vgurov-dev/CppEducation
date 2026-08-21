@@ -38,8 +38,10 @@ struct ListNode {
 Проект протестирован с использованием компилятора `g++` (рекомендуется версия 15+) и стандарта **C++20**.
 
 ### Компиляция через терминал:
+
 ```bash
-g++-15 -std=c++20 leetcode-problems/merge-two-sorted-links.cpp -o program
+rm -f program
+g++-15 -std=c++20 leetcode-problems/search-insert-position.cpp -o program
 ```
 
 ### Запуск исполняемого файла:
