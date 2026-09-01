@@ -21,13 +21,15 @@
 #include <vector>
 #include <iostream>
 
+using namespace std;
+
 class Solution {
 public:
-    int searchInsert(std::vector<int>& nums, int target) {
-        std::cout << "target: " << target << std::endl;
-        std::cout << "nums: ";
+    int searchInsert(vector<int>& nums, int target) {
+        cout << "target: " << target << endl;
+        cout << "nums: ";
         for (const auto& n : nums) {
-            std::cout << n << " ";
+            cout << n << " ";
         }
         int index_start = 0;
         int index_end = static_cast<int>(nums.size()) - 1;
@@ -35,16 +37,16 @@ public:
         // [0, 1, 2, 3]
         // [0, 1, 2, 3, 4]
         while(index_start <= index_end) {
-            std::cout << "Прогон" << std::endl;
-            std::cout << "index_start" << index_start << std::endl;
-            std::cout << "index_end: " << index_end << std::endl;
+            cout << "Прогон" << endl;
+            cout << "index_start" << index_start << endl;
+            cout << "index_end: " << index_end << endl;
      
 
             int index_mid = index_start + (index_end - index_start) / 2;
 
-            std::cout << "index_mid: " << index_mid << std::endl;
-            std::cout << "nums[index_mid]: " << nums[index_mid] << std::endl;
-            std::cout << "\n" << std::endl;
+            cout << "index_mid: " << index_mid << endl;
+            cout << "nums[index_mid]: " << nums[index_mid] << endl;
+            cout << "\n" << endl;
 
             if (nums[index_mid] > target) {
                 index_end = index_mid - 1;
@@ -63,11 +65,11 @@ public:
 int main() {
     Solution solution;
 
-    std::vector<int> v = {1, 3, 100, 4392, 110000};
+    vector<int> v = {1, 3, 100, 4392, 110000};
     int target = 2;
     
     int result = solution.searchInsert(v, target);
-    std::cout << result << std::endl;
+    cout << result << endl;
 
     return 0;
 }
