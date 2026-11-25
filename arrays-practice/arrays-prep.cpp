@@ -64,6 +64,9 @@
 
 #include <cstddef>
 #include <iostream>
+#include <climits>
+#include <iomanip>
+
 
 // ---------------------------------------------------------------------------
 // Задача 1. Статистика по статическому массиву
@@ -77,8 +80,27 @@ struct Stats {
 
 Stats calcStats(const int* a, std::size_t n) {
     // TODO: твоё решение
+
+    // Это приём, чтобы подавить предупреждение компилятора об неиспользуемом параметре
     (void)a; (void)n;
-    return {0, 0, 0, 0.0};
+
+    // Поиск минимума 
+    int v_max = INT_MIN;
+    int v_min = INT_MAX;
+    int v_sum = 0;
+
+    for (size_t i = 0; i < n; i++) 
+    {
+      int v = a[i];
+
+      if (v > v_max) { v_max = v; }
+      if (v < v_min) { v_min = v; }
+      v_sum += v;
+    }
+
+    double v_avg = (double)v_sum / n;
+
+    return {v_sum, v_min, v_max, v_avg};
 }
 
 // ---------------------------------------------------------------------------
