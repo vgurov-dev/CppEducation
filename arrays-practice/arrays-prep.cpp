@@ -65,7 +65,6 @@
 #include <cstddef>
 #include <iostream>
 #include <climits>
-#include <iomanip>
 
 
 // ---------------------------------------------------------------------------
@@ -108,7 +107,15 @@ Stats calcStats(const int* a, std::size_t n) {
 // ---------------------------------------------------------------------------
 void reverse(int* a, std::size_t n) {
     // TODO: твоё решение
-    (void)a; (void)n;
+    int i = 0;
+    while (i < n / 2)
+    {
+      int v_f = a[i];
+      int v_l = a[n-i-1];
+      a[i] = v_l;
+      a[n-i-1] = v_f;
+      i++;
+    }
 }
 
 // ---------------------------------------------------------------------------
